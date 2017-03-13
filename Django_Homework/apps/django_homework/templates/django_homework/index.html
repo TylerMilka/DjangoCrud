@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+</head>
+<body>
+    <form action="/create" method="post">
+    {% csrf_token %} 
+    <label for="name"> Name: <input type="text" name="name" /></label> 
+    <label for="language">Language: <input type="text" name="language"> </label>
+    <label for="code">Code: <input type="text" name="code"> </label>
+    
+    <input type="submit" value="Create" />
+    </form>
+    <table border="1">
+            <thead>
+                <tr>
+                <th>Name </th>
+                <th> Language </th>
+                <th> Code </th>
+                <th> Created At </th>
+                <th> Updated At </th>
+                <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for CodeSnippet in CodeSnippets %}
+                <tr>
+                <td> {{ codeSnippet.name}}</td>
+                <td> {{ codeSnippet.language}}</td>
+                <td> {{ codeSnippet.code }}</td>
+                <td> {{ codeSnippet.created_at }}</td>
+                <td> {{ codeSnippet.updated_at}}</td>
+                <td><a href="/edit/{{ code.id }}"></a>
+                <a href="/delete/{{ code.id }}"</a></td>
+                
+                {% endfor %}
+                </tr>
+
+</body>
+</html>     
