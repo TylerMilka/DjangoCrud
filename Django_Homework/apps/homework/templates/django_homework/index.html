@@ -10,12 +10,12 @@
     <label for="language">Language: <input type="text" name="language"> </label>
     <label for="code">Code: <input type="text" name="code"> </label>
     
-    <input type="submit" value="Create" />
+    <input type="submit" value="create" />
     </form>
     <table border="1">
             <thead>
                 <tr>
-                <th>Name </th>
+                <th> Name </th>
                 <th> Language </th>
                 <th> Code </th>
                 <th> Created At </th>
@@ -26,16 +26,17 @@
             <tbody>
                 {% for CodeSnippet in CodeSnippets %}
                 <tr>
-                <td> {{ codeSnippet.name}}</td>
-                <td> {{ codeSnippet.language}}</td>
-                <td> {{ codeSnippet.code }}</td>
-                <td> {{ codeSnippet.created_at }}</td>
-                <td> {{ codeSnippet.updated_at}}</td>
-                <td><a href="/edit/{{ code.id }}"></a>
-                <a href="/delete/{{ code.id }}"</a></td>
+                <td> {{ CodeSnippets.name}}</td>
+                <td> {{ CodeSnippets.language}}</td>
+                <td> {{ CodeSnippets.code }}</td>
+                <td> {{ CodeSnippets.created_at }}</td>
+                <td> {{ CodeSnippets.updated_at}}</td>
+                <td><a href="/edit/{{ CodeSnippets.id }}"></a>
+                <a href="/delete/{{ CodeSnippets.id }}"</a></td>
                 
                 {% endfor %}
                 </tr>
+            </tbody> 
 
 </body>
 </html>     
